@@ -79,6 +79,50 @@ public class Main {
         }
     }
 
+    public class Kata3 {
+        public static boolean solution(String str, String ending) {
+            return str.endsWith(ending);
+        }
+    }
+
+    class Java {
+        public static int doubleInteger(int i) {
+            return i*2;
+        }
+    }
+
+    class YesOrNo
+    {
+        public static String boolToWord(boolean b) {
+            String a;
+            if (b == true) {
+                a = "Yes";
+            }
+            else a = "No";
+            return a;
+        }
+    }
+
+    public class Vowels {
+        public static int getCount(String str) {
+            int getCount = 0;
+            for (int i=0 ; i<str.length(); i++){
+                char ch = str.charAt(i);
+                if(ch == 'a'|| ch == 'e'|| ch == 'i' ||ch == 'o' ||ch == 'u'){
+                    getCount ++;
+                }
+            }
+            return getCount;
+        }
+    }
+
+    public class BooleanToString {
+        public static String convert(boolean b){
+            String a = String.valueOf(b);
+            return a;
+        }
+    }
+
 
 }
 
