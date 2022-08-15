@@ -10,7 +10,7 @@ public class Main {
         public static Double multiply(Double a, Double b) {
             return a * b;
         }
-    }
+   }
 
     public class Kata {
         public static String solution(String str) {
@@ -123,6 +123,26 @@ public class Main {
         }
     }
 
+    public class StringToNumber {
+        public static int stringToNumber(String str) {
+            return Integer.valueOf(str);
+        }
+    }
+
+    public class Kata4 {
+        public static int makeNegative(int x) {
+            if (x > 0) {
+                x *= -1;
+            }
+            return x;
+        }
+    }
+
+    public class Kata5 {
+        public static int opposite(int number) {
+            return number*-1;
+        }
+    }
 
 }
 
