@@ -1,4 +1,4 @@
-package com.codewars;
+package com.codewars.studying;
 
 public class Main {
 
@@ -10,7 +10,7 @@ public class Main {
         public static Double multiply(Double a, Double b) {
             return a * b;
         }
-   }
+    }
 
     public class Kata {
         public static String solution(String str) {
@@ -37,7 +37,7 @@ public class Main {
 
     public class RemoveChars {
         public static String remove(String str) {
-            String remove = str.substring(1, str.length()-1);
+            String remove = str.substring(1, str.length() - 1);
             return remove;
         }
     }
@@ -50,13 +50,13 @@ public class Main {
 
     public class Kata1 {
         public static String noSpace(final String x) {
-            return x.replaceAll(" ","");
+            return x.replaceAll(" ", "");
         }
     }
 
     public class Kata2 {
         public static String noSpace(final String x) {
-            return x.replace(" ","");
+            return x.replace(" ", "");
         }
     }
 
@@ -67,13 +67,12 @@ public class Main {
     }
 
     public class HelloWorld {
-        public static String greet (){
+        public static String greet() {
             return "hello world!";
         }
     }
 
     public class OppositesAttract {
-
         public static boolean isLove(final int flower1, final int flower2) {
             return flower1 % 2 != flower2 % 2;
         }
@@ -87,18 +86,16 @@ public class Main {
 
     class Java {
         public static int doubleInteger(int i) {
-            return i*2;
+            return i * 2;
         }
     }
 
-    class YesOrNo
-    {
+    class YesOrNo {
         public static String boolToWord(boolean b) {
             String a;
             if (b == true) {
                 a = "Yes";
-            }
-            else a = "No";
+            } else a = "No";
             return a;
         }
     }
@@ -106,10 +103,10 @@ public class Main {
     public class Vowels {
         public static int getCount(String str) {
             int getCount = 0;
-            for (int i=0 ; i<str.length(); i++){
+            for (int i = 0; i < str.length(); i++) {
                 char ch = str.charAt(i);
-                if(ch == 'a'|| ch == 'e'|| ch == 'i' ||ch == 'o' ||ch == 'u'){
-                    getCount ++;
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    getCount++;
                 }
             }
             return getCount;
@@ -117,7 +114,7 @@ public class Main {
     }
 
     public class BooleanToString {
-        public static String convert(boolean b){
+        public static String convert(boolean b) {
             String a = String.valueOf(b);
             return a;
         }
@@ -140,9 +137,10 @@ public class Main {
 
     public class Kata5 {
         public static int opposite(int number) {
-            return number*-1;
+            return number * -1;
         }
     }
+
 
 }
 
