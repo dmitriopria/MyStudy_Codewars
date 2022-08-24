@@ -1,5 +1,7 @@
 package com.codewars.studying;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String args[]) {
@@ -8,6 +10,7 @@ public class Main {
 
     public class Multiply {
         public static Double multiply(Double a, Double b) {
+
             return a * b;
         }
     }
@@ -22,6 +25,7 @@ public class Main {
 
     public class Sid {
         public static int simpleMultiplication(int number) {
+
             return number * (number % 2 > 0 ? 9 : 8);
         }
     }
@@ -140,6 +144,98 @@ public class Main {
             return number * -1;
         }
     }
+
+    public class Solution {
+        public static boolean check(Object[] a, Object x) {
+            if (Arrays.asList(a).contains(x)) {
+                return true;
+            } else return false;
+        }
+    }
+
+    class Kata6 {
+        public static String numberToString(int num) {
+            return String.valueOf(num);
+        }
+    }
+
+    public class Cockroach {
+        public int cockroachSpeed(double x) {
+            return (int) (x * 100000 / 3600);
+        }
+    }
+
+    public class KeepHydrated {
+        public int Liters(double time) {
+            return (int) Math.floor(time / 2);
+        }
+    }
+
+    public class Kata7 {
+        public static int quarterOf(int month) {
+            int num = 0;
+            if (month <= 3) {
+                return num = 1;
+            } else if (month > 3 && month <= 6) {
+                return num = 2;
+            } else if (month > 6 && month <= 9) {
+                return num = 3;
+            } else if (month > 9 && month <= 12) {
+                return num = 4;
+            }
+            return num;
+        }
+    }
+
+    public class EvenOrOdd {
+        public static String even_or_odd(int number) {
+            if (number % 2 == 0) {
+                return "Even";
+            } else return "Odd";
+        }
+    }
+
+    public class HelpAlex {
+        public static String hoopCount(int n) {
+            if (n >= 10) {
+                return "Great, now move on to tricks";
+            } else return "Keep at it until you get it";
+        }
+    }
+
+    public class FindDivisor {
+        public long numberOfDivisors(int n) {
+            int result = 0;
+            for (int i = 1; i <= n; i++) {
+                if (n % i == 0) {
+                    result++;
+                }
+            }
+            return result;
+        }
+    }
+
+
+    public class Sum {
+        public int GetSum(int a, int b) {
+            int sum = 0;
+            if (a < b) {
+                for (int i = a; i <= b; i++) {
+                    sum += i;
+                }
+                return sum;
+            } else if (a > b) {
+                for (int i = b; i <= a; i++) {
+                    sum += i;
+                }
+                return sum;
+            } else return a;
+        }
+    }
+
+
+
+
 
 
 }
