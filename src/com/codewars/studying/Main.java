@@ -10,6 +10,7 @@ public class Main {
 
     }
 
+
     public class Multiply {
         public static Double multiply(Double a, Double b) {
 
@@ -254,8 +255,19 @@ public class Main {
         }
     }
 
+    public class CharProblem {
+        public static int howOld(final String herOld) {
+            String numberOnly = herOld.replaceAll("[^0-9]", "");
+            return Integer.parseInt(numberOnly);
+        }
+    }
 
-
+    public class Clock {
+        public static int Past(int h, int m, int s) {
+            int milliSeconds = (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000);
+            return milliSeconds;
+        }
+    }
 
 
 }
