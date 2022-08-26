@@ -1,6 +1,8 @@
 package com.codewars.studying;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -233,6 +235,24 @@ public class Main {
         }
     }
 
+    public class Bio {
+        public String dnaToRna(String dna) {
+            String splitLetters[] = dna.split("");
+            ArrayList alfa = new ArrayList(List.of(splitLetters));
+            for (int i = 0; i < alfa.size(); i++) {
+                String replaceLetters = String.valueOf(alfa.get(i));
+                replaceLetters = replaceLetters.replaceAll("T", "U");
+                alfa.set(i, replaceLetters);
+            }
+            return String.join("", alfa);
+        }
+    }
+
+    public class Bio2 {
+        public String dnaToRna(String dna) {
+            return dna.replace("T", "U");
+        }
+    }
 
 
 
