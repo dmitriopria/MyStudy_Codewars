@@ -269,5 +269,37 @@ public class Main {
         }
     }
 
+    public class AbbreviateTwoWords {
+        public static String abbrevName(String name) {
+            name = name.toUpperCase();
+            String[] names = name.split(" ");
+            return names[0].charAt(0) + "." + names[1].charAt(0);
+        }
+    }
+
+    public class StringUtils {
+        public static String toAlternativeString(String string) {
+            int strLen;
+            if (string == null || (strLen = string.length()) == 0) {
+                return string;
+            }
+            StringBuffer buffer = new StringBuffer(strLen);
+            char ch = 0;
+            for (int i = 0; i < strLen; i++) {
+                ch = string.charAt(i);
+                if (Character.isUpperCase(ch)) {
+                    ch = Character.toLowerCase(ch);
+                } else if (Character.isTitleCase(ch)) {
+                    ch = Character.toLowerCase(ch);
+                } else if (Character.isLowerCase(ch)) {
+                    ch = Character.toUpperCase(ch);
+                }
+                buffer.append(ch);
+            }
+            return buffer.toString();
+        }
+    }
+
+
 }
 
