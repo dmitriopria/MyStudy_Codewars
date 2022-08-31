@@ -10,7 +10,6 @@ public class Main {
 
     }
 
-
     public class Multiply {
         public static Double multiply(Double a, Double b) {
 
@@ -297,6 +296,46 @@ public class Main {
                 buffer.append(ch);
             }
             return buffer.toString();
+        }
+    }
+
+    public class SmashWords {
+        public static String smash(String words[]) {
+            return String.join(" ", words);
+        }
+    }
+
+    public class Kata8 {
+        public static int[] between(int a, int b) {
+            int list[] = new int[]{};
+            for (int i = a; i <= b; i++) {
+                int c = i++;
+                list[i] = c;
+            }
+            return list;
+        }
+    }
+
+    public class SaleHotdogs {
+        public static int saleHotdogs(final int n) {
+            int price = 0;
+            if (n < 5) {
+                price = n * 100;
+            } else if (n >= 5 && n < 10) {
+                price = n * 95;
+            } else if (n >= 10) {
+                price = n * 90;
+            }
+            return price;
+        }
+    }
+
+    public class Kata9 {
+        public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+            if (distanceToPump / fuelLeft <= mpg) {
+                return true;
+            } else return false;
+            // return distanceToPump <= mpg * fuelLeft;
         }
     }
 
