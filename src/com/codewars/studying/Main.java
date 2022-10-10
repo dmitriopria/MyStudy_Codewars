@@ -339,6 +339,31 @@ public class Main {
         }
     }
 
+    public class isogram {
+        public static boolean isIsogram(String str) {
+            str = str.toLowerCase();
+            int length = str.length();
+            char array[] = str.toCharArray();
+
+            Arrays.sort(array);
+            for (int i = 0; i < length - 1; i++) {
+                if (array[i] == array[i + 1])
+                    return false;
+            }
+            return true;
+        }
+    }
+
+    public class Kata10 {
+        public static int squareSum(int[] n) {
+            int sum = 0;
+            for (int i = 0; i < n.length; i++) {
+                sum += Math.pow(n[i], 2);
+            }
+            return sum;
+        }
+    }
+
 
 }
 
