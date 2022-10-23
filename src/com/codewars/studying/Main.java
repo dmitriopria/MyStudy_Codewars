@@ -367,10 +367,45 @@ public class Main {
     public class BouncingBall {
 
         public static int bouncingBall(double h, double bounce, double window) {
-            if(h > 0 && bounce > 0 && bounce < 1 && window < h) {
+            if (h > 0 && bounce > 0 && bounce < 1 && window < h) {
                 return 2 + bouncingBall((h * bounce), bounce, window);
+            } else return -1;
+        }
+    }
+
+    public class Solution3 {
+        public static int[] twoSum(int[] numbers, int target) {
+            int size = numbers.length;
+            int[] result = new int[2];
+            if (size < 2) {
+                return new int[]{-1, -1};
+            } else {
+                for (int i = 0; i < size - 1; i++) {
+                    for (int j = i + 1; j < size; j++) {
+                        if ((target - numbers[i]) == numbers[j]) {
+                            result[0] = i;
+                            result[1] = j;
+                        }
+                    }
+                }
             }
-            else return -1;
+            return result;
+        }
+    }
+
+    public class Goals {
+        public static int goals(int laLigaGoals, int copaDelReyGoals, int championsLeagueGoals) {
+            int sum = laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+            return sum;
+        }
+    }
+
+    public class Paper {
+        public static int paperWork(int n, int m) {
+            if(n > 0 && m > 0) {
+                return n * m;
+            }
+            return 0;
         }
     }
 
