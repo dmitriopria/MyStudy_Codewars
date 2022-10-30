@@ -409,6 +409,42 @@ public class Main {
         }
     }
 
+    public class Kata11 {
+        public static int[] digitize(long n) {
+            String numString = String.valueOf(n);
+            int numArray[] = new int[numString.length()];
+            int counter = 0;
+            for(int i = numString.length() - 1; i >= 0; i--) {
+                numArray[i] = Integer.valueOf(Character.toString(numString.charAt(counter++)));
+            }
+            return numArray;
+        }
+    }
+
+    class Kata11_2_iterativeReverse {
+        static int reverseDigits(int num) {
+            int revNum = 0;
+            while (num > 0) {
+                revNum = revNum * 10 + num % 10;
+                num = num / 10;
+            }
+            return revNum;
+        }
+    }
+
+    class Kata11_2_recursiveReverse {
+        static int revNum = 0;
+        static int basePos = 1;
+        static int reversDigits(int num) {
+            if (num > 0) {
+                reversDigits(num / 10);
+                revNum += (num % 10) * basePos;
+                basePos *= 10;
+            }
+            return revNum;
+        }
+    }
+
 
 }
 
