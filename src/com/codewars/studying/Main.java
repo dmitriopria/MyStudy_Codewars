@@ -402,7 +402,7 @@ public class Main {
 
     public class Paper {
         public static int paperWork(int n, int m) {
-            if(n > 0 && m > 0) {
+            if (n > 0 && m > 0) {
                 return n * m;
             }
             return 0;
@@ -414,7 +414,7 @@ public class Main {
             String numString = String.valueOf(n);
             int numArray[] = new int[numString.length()];
             int counter = 0;
-            for(int i = numString.length() - 1; i >= 0; i--) {
+            for (int i = numString.length() - 1; i >= 0; i--) {
                 numArray[i] = Integer.valueOf(Character.toString(numString.charAt(counter++)));
             }
             return numArray;
@@ -435,6 +435,7 @@ public class Main {
     class Kata11_2_recursiveReverse {
         static int revNum = 0;
         static int basePos = 1;
+
         static int reversDigits(int num) {
             if (num > 0) {
                 reversDigits(num / 10);
@@ -442,6 +443,64 @@ public class Main {
                 basePos *= 10;
             }
             return revNum;
+        }
+    }
+
+    public class NumberFun {
+        public static long findNextSquare(long sq) {
+            double a = Math.sqrt(sq);
+            if (a % 1 == 0) {
+                long b = (long) (a + 1);
+                return b * b;
+            } else return -1;
+        }
+    }
+
+    public class Kata_12 {
+        public class StringFormatter {
+            public static String reverseWord(String str) {
+                if (str.trim().isEmpty()) {
+                    return str;
+                }
+                String words[] = str.split(" ");
+                String reverseWord = "";
+                for (String w : words) {
+                    StringBuilder sb = new StringBuilder(w);
+                    sb.reverse();
+                    reverseWord += sb.toString() + " ";
+                }
+                return reverseWord.trim();
+            }
+        }
+
+        public static String reverseWords(final String original) {
+            return StringFormatter.reverseWord(original);
+        }
+    }
+
+    public class Xbonacci {
+        public double[] tribonacci(double[] s, int n) {
+            double[] result = new double[n];
+            for (int i = 0; i < n; i++) {
+                if (s.length > i) {
+                    result[i] = s[i];
+                } else {
+                    result[i] = result[i - 1] + result[i - 2] + result[i - 3];
+                }
+            }
+            return result;
+        }
+    }
+
+    public static class Sequence {
+        public static int[] reverse(int n) {
+            int temp = n;
+            int[] a = new int[n];
+            for (int i = 0; i < temp; i++) {
+                a[i] = n;
+                n--;
+            }
+            return a;
         }
     }
 
