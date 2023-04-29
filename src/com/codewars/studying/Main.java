@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String args[]) {
-
+        System.out.println(Kata13.sum(new int[]{6, 2, 1, 8, 10}));
     }
 
     public class Multiply {
@@ -501,6 +501,71 @@ public class Main {
                 n--;
             }
             return a;
+        }
+    }
+
+    public static class Kata13 {
+        public static int sum(int[] numbers) {
+            if (numbers == null || numbers.length <= 2) {
+                return 0;
+            }
+            return Arrays.stream(numbers)
+                    .sorted()
+                    .skip(1)
+                    .limit(numbers.length - 2)
+                    .sum();
+        }
+    }
+
+    public class Printer {
+        public static String printerError(String s) {
+            int error = 0;
+            for (char c : s.toCharArray()) {
+                if (c < 'a' || c > 'm') {
+                    error++;
+                }
+            }
+            return error + "/" + s.length();
+        }
+    }
+
+    public class Square {
+        public static boolean isSquare(int n) {
+            if (n < 0) {
+                return false;
+            }
+            int i = 0;
+            while (i * i < n) {
+                i++;
+            }
+            return i * i == n;
+        }
+    }
+
+    public class Calculate {
+        public static String bmi(double weight, double height) {
+            double bmi = weight / height / height;
+            String result = "";
+            if (bmi <= 18.5) {
+                result = "Underweight";
+            } else if (bmi <= 25.0) {
+                result = "Normal";
+            } else if (bmi <= 30.0) {
+                result = "Overweight";
+            } else result = "Obese";
+            return result;
+        }
+    }
+
+    public class Kata14 {
+        public static int findShort(String s) {
+            int min = 100;
+            for (String str : s.split(" ")) {
+                if (str.length() < min) {
+                    min = str.length();
+                }
+            }
+            return min;
         }
     }
 
