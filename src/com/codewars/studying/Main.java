@@ -569,6 +569,48 @@ public class Main {
         }
     }
 
+    public class Kata_15 {
+        public static String highAndLow(String numbers) {
+            String[] nums = numbers.split(" ");
+            int highest = Integer.MIN_VALUE;
+            int lowest = Integer.MAX_VALUE;
+            for (String num : nums) {
+                int current = Integer.parseInt(num);
+                highest = Math.max(highest, current);
+                lowest = Math.min(lowest, current);
+            }
+            return highest + " " + lowest;
+        }
+    }
+
+    class Solution_2 {
+        public static String whoLikesIt(String... names) {
+            int length = names.length;
+            switch (length) {
+                case 0:
+                    return "no one likes this";
+                case 1:
+                    return names[0] + " likes this";
+                case 2:
+                    return names[0] + " and " + names[1] + " like this";
+                case 3:
+                    return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+                default:
+                    return names[0] + ", " + names[1] + " and " + (length - 2) + " others like this";
+            }
+        }
+    }
+
+    public class GrassHopper {
+        public static int summation(int n) {
+            int sum = 0;
+            for (int i = 1; i <= n; i++) {
+                sum = sum + i;
+            }
+            return sum;
+        }
+    }
+
 
 }
 
