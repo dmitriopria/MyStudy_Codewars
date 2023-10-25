@@ -402,7 +402,7 @@ public class Main {
 
     public class Paper {
         public static int paperWork(int n, int m) {
-            if(n > 0 && m > 0) {
+            if (n > 0 && m > 0) {
                 return n * m;
             }
             return 0;
@@ -414,7 +414,7 @@ public class Main {
             String numString = String.valueOf(n);
             int numArray[] = new int[numString.length()];
             int counter = 0;
-            for(int i = numString.length() - 1; i >= 0; i--) {
+            for (int i = numString.length() - 1; i >= 0; i--) {
                 numArray[i] = Integer.valueOf(Character.toString(numString.charAt(counter++)));
             }
             return numArray;
@@ -435,6 +435,7 @@ public class Main {
     class Kata11_2_recursiveReverse {
         static int revNum = 0;
         static int basePos = 1;
+
         static int reversDigits(int num) {
             if (num > 0) {
                 reversDigits(num / 10);
@@ -444,6 +445,158 @@ public class Main {
             return revNum;
         }
     }
+
+    public class GrassHopper {
+        public static int summation(int n) {
+            int sum = 0;
+            for (int i = 1; i <= n; i++) {
+                sum = sum + i;
+            }
+            return sum;
+        }
+    }
+
+    public class Solution_2 {
+        public static String whoLikesIt(String... names) {
+            int length = names.length;
+            switch (length) {
+                case 0:
+                    return "no one likes this";
+                case 1:
+                    return names[0] + " likes this";
+                case 2:
+                    return names[0] + " and " + names[1] + " like this";
+                case 3:
+                    return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+                default:
+                    return names[0] + ", " + names[1] + " and " + (length - 2) + " others like this";
+            }
+        }
+    }
+
+    public class Kata_12 {
+        public static String highAndLow(String numbers) {
+            String[] nums = numbers.split(" ");
+            int highest = Integer.MIN_VALUE;
+            int lowest = Integer.MAX_VALUE;
+            for (String num : nums) {
+                int current = Integer.parseInt(num);
+                highest = Math.max(highest, current);
+                lowest = Math.min(lowest, current);
+            }
+            return highest + " " + lowest;
+        }
+    }
+
+    public class Kata_13 {
+        public static int findShort(String s) {
+            int min = 100;
+            for (String str : s.split(" ")) {
+                if (str.length() < min) {
+                    min = str.length();
+                }
+            }
+            return min;
+        }
+    }
+
+    public class Calculate {
+        public static String bmi(double weight, double height) {
+            double bmi = weight / height / height;
+            String result = "";
+            if (bmi <= 18.5) {
+                result = "Underweight";
+            } else if (bmi <= 25.0) {
+                result = "Normal";
+            } else if (bmi <= 30.0) {
+                result = "Overweight";
+            } else result = "Obese";
+            return result;
+        }
+    }
+
+    public class Square {
+        public static boolean isSquare(int n) {
+            if (n < 0) {
+                return false;
+            }
+            int i = 0;
+            while (i * i < n) {
+                i++;
+            }
+            return i * i == n;
+        }
+    }
+
+    public class Printer {
+        public static String printerError(String s) {
+            int error = 0;
+            for (char c : s.toCharArray()) {
+                if (c < 'a' || c > 'm') {
+                    error++;
+                }
+            }
+            return error + "/" + s.length();
+        }
+    }
+
+    public class Xbonacci {
+        public double[] tribonacci(double[] s, int n) {
+            double[] result = new double[n];
+            for (int i = 0; i < n; i++) {
+                if (s.length > i) {
+                    result[i] = s[i];
+                } else {
+                    result[i] = result[i - 1] + result[i - 2] + result[i - 3];
+                }
+            }
+            return result;
+        }
+    }
+
+    public class Kata_14 {
+        public class StringFormatter {
+            public static String reverseWord(String str) {
+                if (str.trim().isEmpty()) {
+                    return str;
+                }
+                String words[] = str.split(" ");
+                String reverseWord = "";
+                for (String w : words) {
+                    StringBuilder sb = new StringBuilder(w);
+                    sb.reverse();
+                    reverseWord += sb.toString() + " ";
+                }
+                return reverseWord.trim();
+            }
+        }
+        public static String reverseWords(final String original) {
+            return StringFormatter.reverseWord(original);
+        }
+    }
+
+    public class NumberFun {
+        public static long findNextSquare(long sq) {
+            double a = Math.sqrt(sq);
+            if (a % 1 == 0) {
+                long b = (long) (a + 1);
+                return b * b;
+            } else return -1;
+        }
+    }
+
+    public class Sequence {
+        public static int[] reverse(int n) {
+            int temp = n;
+            int[] a = new int[n];
+            for (int i = 0; i < temp; i++) {
+                a[i] = n;
+                n--;
+            }
+            return a;
+        }
+    }
+
 
 
 }
