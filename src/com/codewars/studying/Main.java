@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String args[]) {
-
+        System.out.println(Kata13.sum(new int[]{6, 2, 1, 8, 10}));
     }
 
     public class Multiply {
@@ -446,57 +446,99 @@ public class Main {
         }
     }
 
-    public class GrassHopper {
-        public static int summation(int n) {
-            int sum = 0;
-            for (int i = 1; i <= n; i++) {
-                sum = sum + i;
-            }
-            return sum;
-        }
-    }
-
-    public class Solution_2 {
-        public static String whoLikesIt(String... names) {
-            int length = names.length;
-            switch (length) {
-                case 0:
-                    return "no one likes this";
-                case 1:
-                    return names[0] + " likes this";
-                case 2:
-                    return names[0] + " and " + names[1] + " like this";
-                case 3:
-                    return names[0] + ", " + names[1] + " and " + names[2] + " like this";
-                default:
-                    return names[0] + ", " + names[1] + " and " + (length - 2) + " others like this";
-            }
+    public class NumberFun {
+        public static long findNextSquare(long sq) {
+            double a = Math.sqrt(sq);
+            if (a % 1 == 0) {
+                long b = (long) (a + 1);
+                return b * b;
+            } else return -1;
         }
     }
 
     public class Kata_12 {
-        public static String highAndLow(String numbers) {
-            String[] nums = numbers.split(" ");
-            int highest = Integer.MIN_VALUE;
-            int lowest = Integer.MAX_VALUE;
-            for (String num : nums) {
-                int current = Integer.parseInt(num);
-                highest = Math.max(highest, current);
-                lowest = Math.min(lowest, current);
+        public class StringFormatter {
+            public static String reverseWord(String str) {
+                if (str.trim().isEmpty()) {
+                    return str;
+                }
+                String words[] = str.split(" ");
+                String reverseWord = "";
+                for (String w : words) {
+                    StringBuilder sb = new StringBuilder(w);
+                    sb.reverse();
+                    reverseWord += sb.toString() + " ";
+                }
+                return reverseWord.trim();
             }
-            return highest + " " + lowest;
+        }
+
+        public static String reverseWords(final String original) {
+            return StringFormatter.reverseWord(original);
         }
     }
 
-    public class Kata_13 {
-        public static int findShort(String s) {
-            int min = 100;
-            for (String str : s.split(" ")) {
-                if (str.length() < min) {
-                    min = str.length();
+    public class Xbonacci {
+        public double[] tribonacci(double[] s, int n) {
+            double[] result = new double[n];
+            for (int i = 0; i < n; i++) {
+                if (s.length > i) {
+                    result[i] = s[i];
+                } else {
+                    result[i] = result[i - 1] + result[i - 2] + result[i - 3];
                 }
             }
-            return min;
+            return result;
+        }
+    }
+
+    public static class Sequence {
+        public static int[] reverse(int n) {
+            int temp = n;
+            int[] a = new int[n];
+            for (int i = 0; i < temp; i++) {
+                a[i] = n;
+                n--;
+            }
+            return a;
+        }
+    }
+
+    public static class Kata13 {
+        public static int sum(int[] numbers) {
+            if (numbers == null || numbers.length <= 2) {
+                return 0;
+            }
+            return Arrays.stream(numbers)
+                    .sorted()
+                    .skip(1)
+                    .limit(numbers.length - 2)
+                    .sum();
+        }
+    }
+
+    public class Printer {
+        public static String printerError(String s) {
+            int error = 0;
+            for (char c : s.toCharArray()) {
+                if (c < 'a' || c > 'm') {
+                    error++;
+                }
+            }
+            return error + "/" + s.length();
+        }
+    }
+
+    public class Square {
+        public static boolean isSquare(int n) {
+            if (n < 0) {
+                return false;
+            }
+            int i = 0;
+            while (i * i < n) {
+                i++;
+            }
+            return i * i == n;
         }
     }
 
@@ -515,88 +557,17 @@ public class Main {
         }
     }
 
-    public class Square {
-        public static boolean isSquare(int n) {
-            if (n < 0) {
-                return false;
-            }
-            int i = 0;
-            while (i * i < n) {
-                i++;
-            }
-            return i * i == n;
-        }
-    }
-
-    public class Printer {
-        public static String printerError(String s) {
-            int error = 0;
-            for (char c : s.toCharArray()) {
-                if (c < 'a' || c > 'm') {
-                    error++;
+    public class Kata14 {
+        public static int findShort(String s) {
+            int min = 100;
+            for (String str : s.split(" ")) {
+                if (str.length() < min) {
+                    min = str.length();
                 }
             }
-            return error + "/" + s.length();
+            return min;
         }
     }
-
-    public class Xbonacci {
-        public double[] tribonacci(double[] s, int n) {
-            double[] result = new double[n];
-            for (int i = 0; i < n; i++) {
-                if (s.length > i) {
-                    result[i] = s[i];
-                } else {
-                    result[i] = result[i - 1] + result[i - 2] + result[i - 3];
-                }
-            }
-            return result;
-        }
-    }
-
-    public class Kata_14 {
-        public class StringFormatter {
-            public static String reverseWord(String str) {
-                if (str.trim().isEmpty()) {
-                    return str;
-                }
-                String words[] = str.split(" ");
-                String reverseWord = "";
-                for (String w : words) {
-                    StringBuilder sb = new StringBuilder(w);
-                    sb.reverse();
-                    reverseWord += sb.toString() + " ";
-                }
-                return reverseWord.trim();
-            }
-        }
-        public static String reverseWords(final String original) {
-            return StringFormatter.reverseWord(original);
-        }
-    }
-
-    public class NumberFun {
-        public static long findNextSquare(long sq) {
-            double a = Math.sqrt(sq);
-            if (a % 1 == 0) {
-                long b = (long) (a + 1);
-                return b * b;
-            } else return -1;
-        }
-    }
-
-    public class Sequence {
-        public static int[] reverse(int n) {
-            int temp = n;
-            int[] a = new int[n];
-            for (int i = 0; i < temp; i++) {
-                a[i] = n;
-                n--;
-            }
-            return a;
-        }
-    }
-
 
 
 }
